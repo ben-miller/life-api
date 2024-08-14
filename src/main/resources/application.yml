@@ -8,5 +8,5 @@ spring:
 
 graphql:
   packages:
-    - "com.example.kpi_dashboard_api"
+    - "com.example.life"
 

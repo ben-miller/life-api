@@ -1,4 +1,4 @@
-package com.example.kpi_dashboard_api
+package com.example.life
 
 data class JobSearch(
     val ignored_applications: Int,

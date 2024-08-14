@@ -1,4 +1,4 @@
-package com.example.kpi_dashboard_api
+package com.example.life
 import com.expediagroup.graphql.server.operations.Query
 import org.springframework.context.annotation.Profile
 import org.springframework.graphql.data.method.annotation.QueryMapping

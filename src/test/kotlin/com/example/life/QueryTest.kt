@@ -1,4 +1,4 @@
-package com.example.kpi_dashboard_api
+package com.example.life
 
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired

@@ -1,4 +1,4 @@
-package com.example.kpi_dashboard_api
+package com.example.life
 
 val data = Source(
     airtable = Airtable(

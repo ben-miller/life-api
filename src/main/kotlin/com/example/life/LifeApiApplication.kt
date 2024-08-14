@@ -1,11 +1,11 @@
-package com.example.kpi_dashboard_api
+package com.example.life
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class KpiDashboardApiApplication
+class LifeApiApplication
 
 fun main(args: Array<String>) {
-	runApplication<KpiDashboardApiApplication>(*args)
+	runApplication<LifeApiApplication>(*args)
 }
