@@ -20,14 +20,76 @@ class QueryTest {
     fun `Test hello query`() {
         val query = """
             query {
-                hello
+              sources {
+                airtable {
+                  job_search {
+                    ignored_applications
+                    rejected_applications
+                    rejected_after_phone_screening
+                    rejected_after_technical_screening
+                    rejected_after_full_interview
+                    total_rejections
+                    in_progress
+                    total_sent
+                    interested
+                  }
+                }
+                desktop {
+                  firefox {
+                    bookmarks
+                  }
+                  obsidian {
+                    inboxes
+                    inbox_items
+                  }
+                  org_mode {
+                    inboxes
+                    inbox_items
+                  }
+                }
+                trello {
+                  inbox_size
+                }
+                google {
+                  youtube {
+                    liked_videos
+                  }
+                }
+                tidal {
+                  dev_total_hours
+                  chores_total_hours
+                  meditation_total_hours
+                  fitness_total_hours
+                }
+              }
             }
         """.trimIndent()
 
         graphQlTester.document(query)
             .execute()
-            .path("hello")
-            .entity(String::class.java)
-            .isEqualTo("Hello, GraphQL!")
+            .also {
+                println("result: " + it.path(""))
+            }
+            .path("sources.airtable.job_search.ignored_applications").entity(Int::class.java).isEqualTo(39)
+            .path("sources.airtable.job_search.rejected_applications").entity(Int::class.java).isEqualTo(26)
+            .path("sources.airtable.job_search.rejected_after_phone_screening").entity(Int::class.java).isEqualTo(2)
+            .path("sources.airtable.job_search.rejected_after_technical_screening").entity(Int::class.java).isEqualTo(2)
+            .path("sources.airtable.job_search.rejected_after_full_interview").entity(Int::class.java).isEqualTo(2)
+            .path("sources.airtable.job_search.total_rejections").entity(Int::class.java).isEqualTo(71)
+            .path("sources.airtable.job_search.in_progress").entity(Int::class.java).isEqualTo(17)
+            .path("sources.airtable.job_search.total_sent").entity(Int::class.java).isEqualTo(88)
+            .path("sources.airtable.job_search.interested").entity(Int::class.java).isEqualTo(47)
+            .path("sources.desktop.firefox.bookmarks").entity(Int::class.java).isEqualTo(67)
+            .path("sources.desktop.obsidian.inboxes").entity(Int::class.java).isEqualTo(68)
+            .path("sources.desktop.obsidian.inbox_items").entity(Int::class.java).isEqualTo(1154)
+            .path("sources.desktop.org_mode.inboxes").entity(Int::class.java).isEqualTo(9)
+            .path("sources.desktop.org_mode.inbox_items").entity(Int::class.java).isEqualTo(117)
+            .path("sources.trello.inbox_size").entity(Int::class.java).isEqualTo(2)
+            .path("sources.google.youtube.liked_videos").entity(Int::class.java).isEqualTo(281)
+            .path("sources.tidal.dev_total_hours").entity(Double::class.java).isEqualTo(18.0)
+            .path("sources.tidal.chores_total_hours").entity(Double::class.java).isEqualTo(1.0)
+            .path("sources.tidal.meditation_total_hours").entity(Double::class.java).isEqualTo(6.75)
+            .path("sources.tidal.fitness_total_hours").entity(Double::class.java).isEqualTo(7.5)
+
     }
 }

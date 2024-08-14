@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: kpi-dashboard-api
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiql
+
+graphql:
+  packages:
+    - "com.example.kpi_dashboard_api"
+
