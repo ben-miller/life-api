@@ -28,12 +28,13 @@ data class Airtable(val job_search: JobSearch)
 data class Trello(val inbox_size: Int)
 
 data class Source(
-    val airtable: Airtable,
-    val obsidian: Obsidian,
-    val trello: Trello,
-    val tidal: Tidal,
-    val firefox: Firefox,
-    val orgMode: OrgMode,
-    val youtube: Youtube,
-    val calendar: Calendar
+    var airtable: Airtable? = null,
+    var obsidian: Obsidian? = null,
+    var trello: Trello? = null,
+    var tidal: Tidal? = null,
+    var firefox: Firefox? = null,
+    var orgMode: OrgMode? = null,
+    var youtube: Youtube? = null,
+    var calendar: Calendar? = null
 )
+

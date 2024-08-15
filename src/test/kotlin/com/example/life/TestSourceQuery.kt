@@ -16,26 +16,26 @@ class TestSourceQuery : Query {
 
     @SchemaMapping(typeName = "Source", field = "airtable")
     fun airtable(source: Source): Airtable {
-        return source.airtable
+        return source.airtable!!
     }
 
     @SchemaMapping(typeName = "Source", field = "obsidian")
     fun obsidian(source: Source): Obsidian {
-        return source.obsidian
+        return source.obsidian!!
     }
 
     @SchemaMapping(typeName = "Source", field = "trello")
     fun trello(source: Source): Trello {
-        return source.trello
+        return source.trello!!
     }
 
     @SchemaMapping(typeName = "Source", field = "youtube")
     fun youtube(source: Source): Youtube {
-        return source.youtube
+        return source.youtube!!
     }
 
     @SchemaMapping(typeName = "Source", field = "tidal")
     fun tidal(source: Source): Tidal {
-        return source.tidal
+        return source.tidal!!
     }
 }

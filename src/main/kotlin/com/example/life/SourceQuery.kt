@@ -14,16 +14,7 @@ class SourceQuery(
 
     @QueryMapping
     fun sources(): Source {
-        return Source(
-            airtable = airtable(),
-            obsidian = obsidian(),
-            trello = trello(),
-            tidal = tidal(),
-            firefox = firefox(),
-            orgMode = orgMode(),
-            youtube = youtube(),
-            calendar = calendar()
-        )
+        return Source()
     }
 
     @SchemaMapping(typeName = "Source", field = "airtable")
