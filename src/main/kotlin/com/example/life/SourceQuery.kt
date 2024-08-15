@@ -6,8 +6,10 @@ import org.springframework.graphql.data.method.annotation.SchemaMapping
 import org.springframework.stereotype.Controller
 
 @Controller
-@Profile("test", "dev")
-class SourceQuery : Query {
+@Profile("!test")
+class SourceQuery(
+    private val utilityService: UtilityService
+) : Query {
 
     @QueryMapping
     fun sources(): Source {
@@ -19,10 +21,11 @@ class SourceQuery : Query {
         return source.airtable
     }
 
-    @SchemaMapping(typeName = "Source", field = "desktop")
-    fun desktop(source: Source): Desktop {
-        return source.desktop
-    }
+    @SchemaMapping(typeName = "Source", field = "obsidian")
+    fun obsidian(source: Source): Obsidian =
+        utilityService.getObsidianMetrics().let {
+            Obsidian(it.inboxesCount, it.inboxTotalItems)
+        }
 
     @SchemaMapping(typeName = "Source", field = "trello")
     fun trello(source: Source): Trello {

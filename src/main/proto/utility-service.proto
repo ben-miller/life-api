@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package utility;
+
+service UtilityService {
+  rpc GetObsidianMetrics(EmptyRequest) returns(ObsidianMetrics);
+  rpc GetFirefoxMetrics(EmptyRequest) returns(FirefoxMetrics);
+}
+
+message EmptyRequest {}
+
+message ObsidianMetrics {
+  int32 inboxes_count = 1;
+  int32 inbox_total_items = 2;
+}
+
+message FirefoxMetrics {
+  int32 bookmarks_count = 1;
+}
