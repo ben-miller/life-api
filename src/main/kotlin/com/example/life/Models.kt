@@ -24,13 +24,12 @@ data class Tidal(
 )
 
 data class Airtable(val job_search: JobSearch)
-data class Desktop(val firefox: Firefox, val obsidian: Obsidian, val org_mode: OrgMode)
 data class Trello(val inbox_size: Int)
 data class Google(val youtube: Youtube)
 
 data class Source(
     val airtable: Airtable,
-    val desktop: Desktop,
+    val obsidian: Obsidian,
     val trello: Trello,
     val google: Google,
     val tidal: Tidal

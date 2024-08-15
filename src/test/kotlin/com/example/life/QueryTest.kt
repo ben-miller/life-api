@@ -34,18 +34,9 @@ class QueryTest {
                     interested
                   }
                 }
-                desktop {
-                  firefox {
-                    bookmarks
-                  }
-                  obsidian {
-                    inboxes
-                    inbox_items
-                  }
-                  org_mode {
-                    inboxes
-                    inbox_items
-                  }
+                obsidian {
+                  inboxes
+                  inbox_items
                 }
                 trello {
                   inbox_size
@@ -79,11 +70,8 @@ class QueryTest {
             .path("sources.airtable.job_search.in_progress").entity(Int::class.java).isEqualTo(17)
             .path("sources.airtable.job_search.total_sent").entity(Int::class.java).isEqualTo(88)
             .path("sources.airtable.job_search.interested").entity(Int::class.java).isEqualTo(47)
-            .path("sources.desktop.firefox.bookmarks").entity(Int::class.java).isEqualTo(67)
-            .path("sources.desktop.obsidian.inboxes").entity(Int::class.java).isEqualTo(68)
-            .path("sources.desktop.obsidian.inbox_items").entity(Int::class.java).isEqualTo(1154)
-            .path("sources.desktop.org_mode.inboxes").entity(Int::class.java).isEqualTo(9)
-            .path("sources.desktop.org_mode.inbox_items").entity(Int::class.java).isEqualTo(117)
+            .path("sources.obsidian.inboxes").entity(Int::class.java).isEqualTo(68)
+            .path("sources.obsidian.inbox_items").entity(Int::class.java).isEqualTo(1154)
             .path("sources.trello.inbox_size").entity(Int::class.java).isEqualTo(2)
             .path("sources.google.youtube.liked_videos").entity(Int::class.java).isEqualTo(281)
             .path("sources.tidal.dev_total_hours").entity(Double::class.java).isEqualTo(18.0)

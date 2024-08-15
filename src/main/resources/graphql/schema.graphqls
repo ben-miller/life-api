@@ -4,10 +4,10 @@ type Query {
 
 type Source {
     airtable: Airtable
-    desktop: Desktop
     trello: Trello
     google: Google
     tidal: Tidal
+    obsidian: Obsidian
 }
 
 type Airtable {
@@ -24,12 +24,6 @@ type JobSearch {
     in_progress: Int
     total_sent: Int
     interested: Int
-}
-
-type Desktop {
-    firefox: Firefox
-    obsidian: Obsidian
-    org_mode: OrgMode
 }
 
 type Firefox {

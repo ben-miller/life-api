@@ -14,11 +14,7 @@ val data = Source(
             interested = 47
         )
     ),
-    desktop = Desktop(
-        firefox = Firefox(bookmarks = 67),
-        obsidian = Obsidian(inboxes = 68, inbox_items = 1154),
-        org_mode = OrgMode(inboxes = 9, inbox_items = 117)
-    ),
+    obsidian = Obsidian(inboxes = 68, inbox_items = 1154),
     trello = Trello(inbox_size = 2),
     google = Google(
         youtube = Youtube(liked_videos = 281)
