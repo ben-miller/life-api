@@ -16,13 +16,14 @@ val data = Source(
     ),
     obsidian = Obsidian(inboxes = 68, inbox_items = 1154),
     trello = Trello(inbox_size = 2),
-    google = Google(
-        youtube = Youtube(liked_videos = 281)
-    ),
-    tidal = Tidal(
+    youtube = Youtube(liked_videos = 281),
+    calendar = Calendar(
         dev_total_hours = 18.0,
         chores_total_hours = 1.0,
         meditation_total_hours = 6.75,
         fitness_total_hours = 7.5
-    )
+    ),
+    tidal = Tidal(uncategorized_tracks = 40),
+    firefox = Firefox(bookmarks = 44),
+    orgMode = OrgMode(inboxes = 43, inbox_items = 55)
 )

@@ -5,6 +5,12 @@ package utility;
 service UtilityService {
   rpc GetObsidianMetrics(EmptyRequest) returns(ObsidianMetrics);
   rpc GetFirefoxMetrics(EmptyRequest) returns(FirefoxMetrics);
+  rpc GetOrgModeMetrics(EmptyRequest) returns(OrgModeMetrics);
+  rpc GetYoutubeMetrics(EmptyRequest) returns(YoutubeMetrics);
+  rpc GetTidalMetrics(EmptyRequest) returns(TidalMetrics);
+  rpc GetCalendarMetrics(EmptyRequest) returns(CalendarMetrics);
+  rpc GetAirtableJobSearchMetrics(EmptyRequest) returns(AirtableJobSearchMetrics);
+  rpc GetTrelloMetrics(EmptyRequest) returns(TrelloMetrics);
 }
 
 message EmptyRequest {}
@@ -16,4 +22,40 @@ message ObsidianMetrics {
 
 message FirefoxMetrics {
   int32 bookmarks_count = 1;
+}
+
+message OrgModeMetrics {
+  int32 inboxes_count = 1;
+  int32 inbox_total_items = 2;
+}
+
+message YoutubeMetrics {
+  int32 liked_videos_count = 1;
+}
+
+message TidalMetrics {
+  int32 uncategorized_tracks = 1;
+}
+
+message CalendarMetrics {
+  double dev_total_hours = 1;
+  double chores_total_hours = 2;
+  double meditation_total_hours = 3;
+  double fitness_total_hours = 4;
+}
+
+message AirtableJobSearchMetrics {
+  int32 ignored_applications = 1;
+  int32 rejected_applications = 2;
+  int32 rejected_after_phone_screening = 3;
+  int32 rejected_after_technical_screening = 4;
+  int32 rejected_after_full_interview = 5;
+  int32 total_rejections = 6;
+  int32 in_progress = 7;
+  int32 total_sent = 8;
+  int32 interested = 9;
+}
+
+message TrelloMetrics {
+  int32 inbox_size = 1;
 }

@@ -8,6 +8,10 @@ type Source {
     google: Google
     tidal: Tidal
     obsidian: Obsidian
+    org_mode: OrgMode
+    firefox: Firefox
+    calendar: Calendar
+    youtube: Youtube
 }
 
 type Airtable {
@@ -52,11 +56,15 @@ type Youtube {
     liked_videos: Int
 }
 
-type Tidal {
+type Calendar {
     dev_total_hours: Float
     chores_total_hours: Float
     meditation_total_hours: Float
     fitness_total_hours: Float
+}
+
+type Tidal {
+    uncategorized_tracks: Int
 }
 
 schema {

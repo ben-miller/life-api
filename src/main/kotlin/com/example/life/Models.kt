@@ -16,21 +16,24 @@ data class Firefox(val bookmarks: Int)
 data class Obsidian(val inboxes: Int, val inbox_items: Int)
 data class OrgMode(val inboxes: Int, val inbox_items: Int)
 data class Youtube(val liked_videos: Int)
-data class Tidal(
+data class Calendar(
     val dev_total_hours: Double,
     val chores_total_hours: Double,
     val meditation_total_hours: Double,
     val fitness_total_hours: Double
 )
+data class Tidal(val uncategorized_tracks: Int)
 
 data class Airtable(val job_search: JobSearch)
 data class Trello(val inbox_size: Int)
-data class Google(val youtube: Youtube)
 
 data class Source(
     val airtable: Airtable,
     val obsidian: Obsidian,
     val trello: Trello,
-    val google: Google,
-    val tidal: Tidal
+    val tidal: Tidal,
+    val firefox: Firefox,
+    val orgMode: OrgMode,
+    val youtube: Youtube,
+    val calendar: Calendar
 )

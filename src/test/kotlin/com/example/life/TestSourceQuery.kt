@@ -29,9 +29,9 @@ class TestSourceQuery : Query {
         return source.trello
     }
 
-    @SchemaMapping(typeName = "Source", field = "google")
-    fun google(source: Source): Google {
-        return source.google
+    @SchemaMapping(typeName = "Source", field = "youtube")
+    fun youtube(source: Source): Youtube {
+        return source.youtube
     }
 
     @SchemaMapping(typeName = "Source", field = "tidal")
