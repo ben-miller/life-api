@@ -47,7 +47,7 @@ class SourceQuery(
             Trello(it.inboxSize)
         }
 
-    @SchemaMapping(typeName = "Source", field = "google")
+    @SchemaMapping(typeName = "Source", field = "youtube")
     fun youtube(): Youtube =
         utilityService.getYoutubeMetrics().let {
             Youtube(it.likedVideosCount)
