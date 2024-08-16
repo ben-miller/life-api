@@ -13,12 +13,12 @@ class SourceQuery(
 ) : Query {
 
     @QueryMapping
-    fun sources(): Source {
+    suspend fun sources(): Source {
         return Source()
     }
 
     @SchemaMapping(typeName = "Source", field = "airtable")
-    fun airtable(): Airtable =
+    suspend fun airtable(): Airtable =
         utilityService.getAirtableJobSearchMetrics().let {
             Airtable(
                 JobSearch(
@@ -36,43 +36,43 @@ class SourceQuery(
         }
 
     @SchemaMapping(typeName = "Source", field = "obsidian")
-    fun obsidian(): Obsidian =
+    suspend fun obsidian(): Obsidian =
         utilityService.getObsidianMetrics().let {
             Obsidian(it.inboxesCount, it.inboxTotalItems)
         }
 
     @SchemaMapping(typeName = "Source", field = "trello")
-    fun trello(): Trello =
+    suspend fun trello(): Trello =
         utilityService.getTrelloMetrics().let {
             Trello(it.inboxSize)
         }
 
     @SchemaMapping(typeName = "Source", field = "youtube")
-    fun youtube(): Youtube =
+    suspend fun youtube(): Youtube =
         utilityService.getYoutubeMetrics().let {
             Youtube(it.likedVideosCount)
         }
 
     @SchemaMapping(typeName = "Source", field = "tidal")
-    fun tidal(): Tidal =
+    suspend fun tidal(): Tidal =
         utilityService.getTidalMetrics().let {
             Tidal(it.uncategorizedTracks)
         }
 
     @SchemaMapping(typeName = "Source", field = "firefox")
-    fun firefox(): Firefox =
+    suspend fun firefox(): Firefox =
         utilityService.getFirefoxMetrics().let {
             Firefox(it.bookmarksCount)
         }
 
     @SchemaMapping(typeName = "Source", field = "org_mode")
-    fun orgMode(): OrgMode =
+    suspend fun orgMode(): OrgMode =
         utilityService.getOrgModeMetrics().let {
             OrgMode(it.inboxesCount, it.inboxTotalItems)
         }
 
     @SchemaMapping(typeName = "Source", field = "calendar")
-    fun calendar(): Calendar =
+    suspend fun calendar(): Calendar =
         utilityService.getCalendarMetrics().let {
             Calendar(
                 dev_total_hours = it.devTotalHours,

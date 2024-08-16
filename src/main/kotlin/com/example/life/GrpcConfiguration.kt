@@ -4,7 +4,7 @@ import io.grpc.ManagedChannel
 import io.grpc.ManagedChannelBuilder
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import utility.UtilityServiceGrpc
+import utility.UtilityServiceGrpcKt
 
 @Configuration
 class GrpcConfiguration {
@@ -17,5 +17,6 @@ class GrpcConfiguration {
     @Bean
     fun utilityServiceStub(
         channel: ManagedChannel
-    ): UtilityServiceGrpc.UtilityServiceBlockingStub = UtilityServiceGrpc.newBlockingStub(channel)
+    ): UtilityServiceGrpcKt.UtilityServiceCoroutineStub =
+        UtilityServiceGrpcKt.UtilityServiceCoroutineStub(channel)
 }

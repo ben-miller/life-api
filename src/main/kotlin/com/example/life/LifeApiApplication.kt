@@ -6,6 +6,6 @@ import org.springframework.boot.runApplication
 @SpringBootApplication
 class LifeApiApplication
 
-fun main(args: Array<String>) {
+suspend fun main(args: Array<String>) {
 	runApplication<LifeApiApplication>(*args)
 }

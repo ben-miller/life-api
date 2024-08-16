@@ -2,18 +2,18 @@ package com.example.life
 
 import io.grpc.ManagedChannel
 import org.springframework.stereotype.Service
-import utility.UtilityServiceGrpc
+import utility.UtilityServiceGrpcKt
 import utility.UtilityServiceOuterClass.*
 
 interface UtilityService {
-    fun getObsidianMetrics(): ObsidianMetrics
-    fun getAirtableJobSearchMetrics(): AirtableJobSearchMetrics
-    fun getFirefoxMetrics(): FirefoxMetrics
-    fun getOrgModeMetrics(): OrgModeMetrics
-    fun getYoutubeMetrics(): YoutubeMetrics
-    fun getTidalMetrics(): TidalMetrics
-    fun getCalendarMetrics(): CalendarMetrics
-    fun getTrelloMetrics(): TrelloMetrics
+    suspend fun getObsidianMetrics(): ObsidianMetrics
+    suspend fun getAirtableJobSearchMetrics(): AirtableJobSearchMetrics
+    suspend fun getFirefoxMetrics(): FirefoxMetrics
+    suspend fun getOrgModeMetrics(): OrgModeMetrics
+    suspend fun getYoutubeMetrics(): YoutubeMetrics
+    suspend fun getTidalMetrics(): TidalMetrics
+    suspend fun getCalendarMetrics(): CalendarMetrics
+    suspend fun getTrelloMetrics(): TrelloMetrics
 }
 
 private val EmptyReq = EmptyRequest.newBuilder().build()
@@ -21,14 +21,14 @@ private val EmptyReq = EmptyRequest.newBuilder().build()
 @Service
 class UtilityServiceImpl(
     private val channel: ManagedChannel,
-    private val stub: UtilityServiceGrpc.UtilityServiceBlockingStub
+    private val stub: UtilityServiceGrpcKt.UtilityServiceCoroutineStub
 ) : UtilityService {
-    override fun getObsidianMetrics(): ObsidianMetrics = stub.getObsidianMetrics(EmptyReq)
-    override fun getAirtableJobSearchMetrics(): AirtableJobSearchMetrics = stub.getAirtableJobSearchMetrics(EmptyReq)
-    override fun getFirefoxMetrics(): FirefoxMetrics = stub.getFirefoxMetrics(EmptyReq)
-    override fun getOrgModeMetrics(): OrgModeMetrics = stub.getOrgModeMetrics(EmptyReq)
-    override fun getYoutubeMetrics(): YoutubeMetrics = stub.getYoutubeMetrics(EmptyReq)
-    override fun getTidalMetrics(): TidalMetrics = stub.getTidalMetrics(EmptyReq)
-    override fun getCalendarMetrics(): CalendarMetrics = stub.getCalendarMetrics(EmptyReq)
-    override fun getTrelloMetrics(): TrelloMetrics = stub.getTrelloMetrics(EmptyReq)
+    override suspend fun getObsidianMetrics(): ObsidianMetrics = stub.getObsidianMetrics(EmptyReq)
+    override suspend fun getAirtableJobSearchMetrics(): AirtableJobSearchMetrics = stub.getAirtableJobSearchMetrics(EmptyReq)
+    override suspend fun getFirefoxMetrics(): FirefoxMetrics = stub.getFirefoxMetrics(EmptyReq)
+    override suspend fun getOrgModeMetrics(): OrgModeMetrics = stub.getOrgModeMetrics(EmptyReq)
+    override suspend fun getYoutubeMetrics(): YoutubeMetrics = stub.getYoutubeMetrics(EmptyReq)
+    override suspend fun getTidalMetrics(): TidalMetrics = stub.getTidalMetrics(EmptyReq)
+    override suspend fun getCalendarMetrics(): CalendarMetrics = stub.getCalendarMetrics(EmptyReq)
+    override suspend fun getTrelloMetrics(): TrelloMetrics = stub.getTrelloMetrics(EmptyReq)
 }
