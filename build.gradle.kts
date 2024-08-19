@@ -26,6 +26,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("org.springframework.boot:spring-boot-starter-graphql")
 	implementation("org.springframework.boot:spring-boot-starter-security")
+	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 	implementation("org.springframework:spring-webflux")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
@@ -34,6 +35,8 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("io.micrometer:micrometer-registry-prometheus")
 
+	implementation("io.lettuce:lettuce-core")
+	implementation("com.fasterxml.jackson.core:jackson-databind")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("com.expediagroup", "graphql-kotlin-spring-server", "7.1.1")

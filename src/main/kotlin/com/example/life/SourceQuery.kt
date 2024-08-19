@@ -9,7 +9,8 @@ import org.springframework.stereotype.Controller
 @Controller
 @Profile("!test")
 class SourceQuery(
-    private val utilityService: UtilityService
+    private val utilityService: UtilityService,
+    private val rs: RedisService
 ) : Query {
 
     @QueryMapping
@@ -18,22 +19,30 @@ class SourceQuery(
     }
 
     @SchemaMapping(typeName = "Source", field = "airtable")
-    suspend fun airtable(): Airtable =
-        utilityService.getAirtableJobSearchMetrics().let {
-            Airtable(
-                JobSearch(
-                    ignored_applications = it.ignoredApplications,
-                    rejected_applications = it.rejectedApplications,
-                    rejected_after_phone_screening = it.rejectedAfterPhoneScreening,
-                    rejected_after_technical_screening = it.rejectedAfterTechnicalScreening,
-                    rejected_after_full_interview = it.rejectedAfterFullInterview,
-                    total_rejections = it.totalRejections,
-                    in_progress = it.inProgress,
-                    total_sent = it.totalSent,
-                    interested = it.interested
+    suspend fun airtable(): Airtable {
+        val key = "source.airtable"
+        if (rs.exists(key)) {
+            return rs.get(key, Airtable::class.java)!!
+        } else {
+            val res = utilityService.getAirtableJobSearchMetrics().let {
+                Airtable(
+                    JobSearch(
+                        ignored_applications = it.ignoredApplications,
+                        rejected_applications = it.rejectedApplications,
+                        rejected_after_phone_screening = it.rejectedAfterPhoneScreening,
+                        rejected_after_technical_screening = it.rejectedAfterTechnicalScreening,
+                        rejected_after_full_interview = it.rejectedAfterFullInterview,
+                        total_rejections = it.totalRejections,
+                        in_progress = it.inProgress,
+                        total_sent = it.totalSent,
+                        interested = it.interested
+                    )
                 )
-            )
+            }
+            rs.save(key, res)
+            return res
         }
+    }
 
     @SchemaMapping(typeName = "Source", field = "obsidian")
     suspend fun obsidian(): Obsidian =
