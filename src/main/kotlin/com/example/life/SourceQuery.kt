@@ -1,5 +1,14 @@
 package com.example.life
 
+import com.example.life.GraphQLConstants.Fields.AIRTABLE
+import com.example.life.GraphQLConstants.Fields.CALENDAR
+import com.example.life.GraphQLConstants.Fields.FIREFOX
+import com.example.life.GraphQLConstants.Fields.OBSIDIAN
+import com.example.life.GraphQLConstants.Fields.ORG_MODE
+import com.example.life.GraphQLConstants.Fields.TIDAL
+import com.example.life.GraphQLConstants.Fields.TRELLO
+import com.example.life.GraphQLConstants.Fields.YOUTUBE
+import com.example.life.GraphQLConstants.TypeNames.SOURCE
 import com.example.life.datasource.*
 import com.expediagroup.graphql.server.operations.Query
 import org.springframework.context.annotation.Profile
@@ -26,35 +35,35 @@ class SourceQuery(
         return Source()
     }
 
-    @SchemaMapping(typeName = "Source", field = "airtable")
+    @SchemaMapping(typeName = SOURCE, field = AIRTABLE)
     suspend fun airtable(@Argument forceRefresh: Boolean = false): Airtable =
         airtableDataSource.fetchWithCache(forceRefresh)
 
-    @SchemaMapping(typeName = "Source", field = "obsidian")
+    @SchemaMapping(typeName = SOURCE, field = OBSIDIAN)
     suspend fun obsidian(@Argument forceRefresh: Boolean = false): Obsidian =
         obsidianDataSource.fetchWithCache(forceRefresh)
 
-    @SchemaMapping(typeName = "Source", field = "trello")
+    @SchemaMapping(typeName = SOURCE, field = TRELLO)
     suspend fun trello(@Argument forceRefresh: Boolean = false): Trello =
         trelloDataSource.fetchWithCache(forceRefresh)
 
-    @SchemaMapping(typeName = "Source", field = "youtube")
+    @SchemaMapping(typeName = SOURCE, field = YOUTUBE)
     suspend fun youtube(@Argument forceRefresh: Boolean = false): Youtube =
         youtubeDataSource.fetchWithCache(forceRefresh)
 
-    @SchemaMapping(typeName = "Source", field = "tidal")
+    @SchemaMapping(typeName = SOURCE, field = TIDAL)
     suspend fun tidal(@Argument forceRefresh: Boolean = false): Tidal =
         tidalDataSource.fetchWithCache(forceRefresh)
 
-    @SchemaMapping(typeName = "Source", field = "firefox")
+    @SchemaMapping(typeName = SOURCE, field = FIREFOX)
     suspend fun firefox(@Argument forceRefresh: Boolean = false): Firefox =
         firefoxDataSource.fetchWithCache(forceRefresh)
 
-    @SchemaMapping(typeName = "Source", field = "org_mode")
+    @SchemaMapping(typeName = SOURCE, field = ORG_MODE)
     suspend fun orgMode(@Argument forceRefresh: Boolean = false): OrgMode =
         orgModeDataSource.fetchWithCache(forceRefresh)
 
-    @SchemaMapping(typeName = "Source", field = "calendar")
+    @SchemaMapping(typeName = SOURCE, field = CALENDAR)
     suspend fun calendar(@Argument forceRefresh: Boolean = false): Calendar =
         calendarDataSource.fetchWithCache(forceRefresh)
 }
