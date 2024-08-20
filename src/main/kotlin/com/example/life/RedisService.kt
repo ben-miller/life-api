@@ -34,9 +34,10 @@ class RedisService(
     suspend fun <T : Any> withCached(
         key: String,
         clazz: Class<T>,
+        forceRefresh: Boolean = false,
         block: suspend () -> T
     ): T {
-        if (exists(key)) {
+        if (exists(key) && !forceRefresh) {
             return get(key, clazz)!!
         } else {
             val res = block()

@@ -3,15 +3,15 @@ type Query {
 }
 
 type Source {
-    airtable: Airtable
-    trello: Trello
-    google: Google
-    tidal: Tidal
-    obsidian: Obsidian
-    org_mode: OrgMode
-    firefox: Firefox
-    calendar: Calendar
-    youtube: Youtube
+    airtable(forceRefresh: Boolean = false): Airtable
+    trello(forceRefresh: Boolean = false): Trello
+    google(forceRefresh: Boolean = false): Google
+    tidal(forceRefresh: Boolean = false): Tidal
+    obsidian(forceRefresh: Boolean = false): Obsidian
+    org_mode(forceRefresh: Boolean = false): OrgMode
+    firefox(forceRefresh: Boolean = false): Firefox
+    calendar(forceRefresh: Boolean = false): Calendar
+    youtube(forceRefresh: Boolean = false): Youtube
 }
 
 type Airtable {
