@@ -1,6 +1,7 @@
 package com.example.life
 
 import com.expediagroup.graphql.server.operations.Query
+import kotlinx.coroutines.withContext
 import org.springframework.context.annotation.Profile
 import org.springframework.graphql.data.method.annotation.QueryMapping
 import org.springframework.graphql.data.method.annotation.SchemaMapping
@@ -20,11 +21,8 @@ class SourceQuery(
 
     @SchemaMapping(typeName = "Source", field = "airtable")
     suspend fun airtable(): Airtable {
-        val key = "source.airtable"
-        if (rs.exists(key)) {
-            return rs.get(key, Airtable::class.java)!!
-        } else {
-            val res = utilityService.getAirtableJobSearchMetrics().let {
+        return rs.withCached("source.airtable", Airtable::class.java) {
+            utilityService.getAirtableJobSearchMetrics().let {
                 Airtable(
                     JobSearch(
                         ignored_applications = it.ignoredApplications,
@@ -39,8 +37,6 @@ class SourceQuery(
                     )
                 )
             }
-            rs.save(key, res)
-            return res
         }
     }
 

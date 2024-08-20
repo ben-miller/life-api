@@ -30,4 +30,18 @@ class RedisService(
     suspend fun exists(key: String): Boolean {
         return redisTemplate.hasKey(key).awaitSingle()
     }
+
+    suspend fun <T : Any> withCached(
+        key: String,
+        clazz: Class<T>,
+        block: suspend () -> T
+    ): T {
+        if (exists(key)) {
+            return get(key, clazz)!!
+        } else {
+            val res = block()
+            save(key, res)
+            return res
+        }
+    }
 }
