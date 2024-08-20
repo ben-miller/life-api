@@ -1,6 +1,5 @@
 package com.example.life
 
-import io.grpc.ManagedChannel
 import org.springframework.stereotype.Service
 import utility.UtilityServiceGrpcKt
 import utility.UtilityServiceOuterClass.*
@@ -20,7 +19,6 @@ private val EmptyReq = EmptyRequest.newBuilder().build()
 
 @Service
 class UtilityServiceImpl(
-    private val channel: ManagedChannel,
     private val stub: UtilityServiceGrpcKt.UtilityServiceCoroutineStub
 ) : UtilityService {
     override suspend fun getObsidianMetrics(): ObsidianMetrics = stub.getObsidianMetrics(EmptyReq)
