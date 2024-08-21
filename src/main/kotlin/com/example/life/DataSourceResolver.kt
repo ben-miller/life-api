@@ -19,7 +19,7 @@ import org.springframework.stereotype.Controller
 
 @Controller
 @Profile("!test")
-class SourceQuery(
+class DataSourceResolver(
     private val airtableDataSource: AirtableDataSource,
     private val obsidianDataSource: ObsidianDataSource,
     private val trelloDataSource: TrelloDataSource,
