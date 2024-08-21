@@ -1,5 +1,10 @@
 package com.example.life.datasource
 
-interface DataSource<T : Any> {
-    suspend fun fetch(): T
+abstract class DataSource<T : Any> {
+    abstract suspend fun fetch(): T
+    abstract suspend fun save(value: T)
+    suspend fun fetchAndSave() {
+        val newValue: T = fetch()
+        save(newValue)
+    }
 }

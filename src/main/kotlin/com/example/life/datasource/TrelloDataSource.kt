@@ -1,7 +1,7 @@
 package com.example.life.datasource
 
-import com.example.life.Trello
 import com.example.life.RedisService
+import com.example.life.Trello
 import com.example.life.UtilityService
 import org.springframework.stereotype.Service
 
@@ -18,5 +18,9 @@ class TrelloDataSource(
         return utilityService.getTrelloMetrics().let {
             Trello(it.inboxSize)
         }
+    }
+
+    override suspend fun save(value: Trello) {
+        TODO("Not yet implemented")
     }
 }

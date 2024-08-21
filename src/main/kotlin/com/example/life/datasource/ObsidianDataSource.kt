@@ -19,4 +19,8 @@ class ObsidianDataSource(
             Obsidian(it.inboxesCount, it.inboxTotalItems)
         }
     }
+
+    override suspend fun save(value: Obsidian) {
+        TODO("Not yet implemented")
+    }
 }

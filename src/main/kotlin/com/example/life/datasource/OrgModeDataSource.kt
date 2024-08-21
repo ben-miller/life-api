@@ -19,4 +19,8 @@ class OrgModeDataSource(
             OrgMode(it.inboxesCount, it.inboxTotalItems)
         }
     }
+
+    override suspend fun save(value: OrgMode) {
+        TODO("Not yet implemented")
+    }
 }

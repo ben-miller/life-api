@@ -19,4 +19,8 @@ class FirefoxDataSource(
             Firefox(it.bookmarksCount)
         }
     }
+
+    override suspend fun save(value: Firefox) {
+        TODO("Not yet implemented")
+    }
 }

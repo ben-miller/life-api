@@ -19,4 +19,8 @@ class TidalDataSource(
             Tidal(it.uncategorizedTracks)
         }
     }
+
+    override suspend fun save(value: Tidal) {
+        TODO("Not yet implemented")
+    }
 }

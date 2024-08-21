@@ -33,4 +33,8 @@ class AirtableDataSource(
             )
         }
     }
+
+    override suspend fun save(value: Airtable) {
+        TODO("Not yet implemented")
+    }
 }
