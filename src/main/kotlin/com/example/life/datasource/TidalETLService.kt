@@ -6,21 +6,21 @@ import com.example.life.UtilityService
 import org.springframework.stereotype.Service
 
 @Service
-class TidalDataSource(
+class TidalETLService(
     private val utilityService: UtilityService,
     redisService: RedisService
-) : CacheableDataSource<Tidal>(
+) : CacheableETLService<Tidal>(
     redisService,
     "source.tidal",
     Tidal::class.java
 ) {
-    override suspend fun fetch(): Tidal {
+    override suspend fun extract(): Tidal {
         return utilityService.getTidalMetrics().let {
             Tidal(it.uncategorizedTracks)
         }
     }
 
-    override suspend fun save(value: Tidal) {
+    override suspend fun load(value: Tidal) {
         TODO("Not yet implemented")
     }
 }

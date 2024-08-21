@@ -6,21 +6,21 @@ import com.example.life.UtilityService
 import org.springframework.stereotype.Service
 
 @Service
-class ObsidianDataSource(
+class ObsidianETLService(
     private val utilityService: UtilityService,
     redisService: RedisService
-) : CacheableDataSource<Obsidian>(
+) : CacheableETLService<Obsidian>(
     redisService,
     "source.obsidian",
     Obsidian::class.java
 ) {
-    override suspend fun fetch(): Obsidian {
+    override suspend fun extract(): Obsidian {
         return utilityService.getObsidianMetrics().let {
             Obsidian(it.inboxesCount, it.inboxTotalItems)
         }
     }
 
-    override suspend fun save(value: Obsidian) {
+    override suspend fun load(value: Obsidian) {
         TODO("Not yet implemented")
     }
 }

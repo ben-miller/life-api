@@ -1,6 +1,6 @@
 package com.example.life.datasync
 
-import com.example.life.datasource.CacheableDataSource
+import com.example.life.datasource.CacheableETLService
 import kotlinx.coroutines.delay
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Service
@@ -11,7 +11,7 @@ private const val CRON_EVERY_HOUR = "0 0 * * * *"
 
 @Service
 class DataSyncServiceImpl(
-    private val dataSources: List<CacheableDataSource<*>>
+    private val dataSources: List<CacheableETLService<*>>
 ) : DataSyncService {
 
     /**

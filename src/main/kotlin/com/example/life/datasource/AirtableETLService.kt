@@ -8,15 +8,15 @@ import org.springframework.stereotype.Service
 
 
 @Service
-class AirtableDataSource(
+class AirtableETLService(
     private val utilityService: UtilityService,
     redisService: RedisService
-) : CacheableDataSource<Airtable>(
+) : CacheableETLService<Airtable>(
     redisService,
     "source.airtable",
     Airtable::class.java
 ) {
-    override suspend fun fetch(): Airtable {
+    override suspend fun extract(): Airtable {
         return utilityService.getAirtableJobSearchMetrics().let {
             Airtable(
                 JobSearch(
@@ -34,7 +34,7 @@ class AirtableDataSource(
         }
     }
 
-    override suspend fun save(value: Airtable) {
+    override suspend fun load(value: Airtable) {
         TODO("Not yet implemented")
     }
 }

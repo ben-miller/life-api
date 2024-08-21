@@ -20,14 +20,14 @@ import org.springframework.stereotype.Controller
 @Controller
 @Profile("!test")
 class DataSourceResolver(
-    private val airtableDataSource: AirtableDataSource,
-    private val obsidianDataSource: ObsidianDataSource,
-    private val trelloDataSource: TrelloDataSource,
-    private val youtubeDataSource: YoutubeDataSource,
-    private val tidalDataSource: TidalDataSource,
-    private val firefoxDataSource: FirefoxDataSource,
-    private val orgModeDataSource: OrgModeDataSource,
-    private val calendarDataSource: CalendarDataSource
+    private val airtableDataSource: AirtableETLService,
+    private val obsidianDataSource: ObsidianETLService,
+    private val trelloDataSource: TrelloETLService,
+    private val youtubeDataSource: YoutubeETLService,
+    private val tidalDataSource: TidalETLService,
+    private val firefoxDataSource: FirefoxETLService,
+    private val orgModeDataSource: OrgModeETLService,
+    private val calendarDataSource: CalendarETLService
 ) : Query {
 
     @QueryMapping

@@ -6,15 +6,15 @@ import com.example.life.UtilityService
 import org.springframework.stereotype.Service
 
 @Service
-class CalendarDataSource(
+class CalendarETLService(
     private val utilityService: UtilityService,
     redisService: RedisService
-) : CacheableDataSource<Calendar>(
+) : CacheableETLService<Calendar>(
     redisService,
     "source.calendar",
     Calendar::class.java
 ) {
-    override suspend fun fetch(): Calendar {
+    override suspend fun extract(): Calendar {
         return utilityService.getCalendarMetrics().let {
             Calendar(
                 dev_total_hours = it.devTotalHours,
@@ -25,7 +25,7 @@ class CalendarDataSource(
         }
     }
 
-    override suspend fun save(value: Calendar) {
+    override suspend fun load(value: Calendar) {
         TODO("Not yet implemented")
     }
 }

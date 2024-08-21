@@ -6,15 +6,15 @@ import com.example.life.UtilityService
 import org.springframework.stereotype.Service
 
 @Service
-class YoutubeDataSource(
+class YoutubeETLService(
     private val utilityService: UtilityService,
     redisService: RedisService
-) : CacheableDataSource<Youtube>(
+) : CacheableETLService<Youtube>(
     redisService,
     "source.youtube",
     Youtube::class.java
 ) {
-    override suspend fun fetch(): Youtube {
+    override suspend fun extract(): Youtube {
         return utilityService.getYoutubeMetrics().let {
             Youtube(it.likedVideosCount)
         }

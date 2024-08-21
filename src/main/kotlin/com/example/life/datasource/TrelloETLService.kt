@@ -1,26 +1,26 @@
 package com.example.life.datasource
 
-import com.example.life.Firefox
 import com.example.life.RedisService
+import com.example.life.Trello
 import com.example.life.UtilityService
 import org.springframework.stereotype.Service
 
 @Service
-class FirefoxDataSource(
+class TrelloETLService(
     private val utilityService: UtilityService,
     redisService: RedisService
-) : CacheableDataSource<Firefox>(
+) : CacheableETLService<Trello>(
     redisService,
-    "source.firefox",
-    Firefox::class.java
+    "source.trello",
+    Trello::class.java
 ) {
-    override suspend fun fetch(): Firefox {
-        return utilityService.getFirefoxMetrics().let {
-            Firefox(it.bookmarksCount)
+    override suspend fun extract(): Trello {
+        return utilityService.getTrelloMetrics().let {
+            Trello(it.inboxSize)
         }
     }
 
-    override suspend fun save(value: Firefox) {
+    override suspend fun load(value: Trello) {
         TODO("Not yet implemented")
     }
 }
