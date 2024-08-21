@@ -1,4 +1,4 @@
-package com.example.life.datasource
+package com.example.life.etl
 
 abstract class ETLService<T : Any> {
     abstract suspend fun extract(): T

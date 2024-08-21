@@ -1,8 +1,8 @@
-package com.example.life.datasource
+package com.example.life.etl
 
-import com.example.life.Obsidian
-import com.example.life.RedisService
-import com.example.life.UtilityService
+import com.example.life.model.Obsidian
+import com.example.life.service.RedisService
+import com.example.life.service.UtilityService
 import org.springframework.stereotype.Service
 
 @Service

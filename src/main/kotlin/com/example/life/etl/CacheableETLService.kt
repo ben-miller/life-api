@@ -1,6 +1,6 @@
-package com.example.life.datasource
+package com.example.life.etl
 
-import com.example.life.RedisService
+import com.example.life.service.RedisService
 
 abstract class CacheableETLService<T : Any>(
     private val redisService: RedisService,

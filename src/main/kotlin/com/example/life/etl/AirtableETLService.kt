@@ -1,9 +1,9 @@
-package com.example.life.datasource
+package com.example.life.etl
 
-import com.example.life.Airtable
-import com.example.life.JobSearch
-import com.example.life.RedisService
-import com.example.life.UtilityService
+import com.example.life.model.Airtable
+import com.example.life.model.JobSearch
+import com.example.life.service.RedisService
+import com.example.life.service.UtilityService
 import org.springframework.stereotype.Service
 
 

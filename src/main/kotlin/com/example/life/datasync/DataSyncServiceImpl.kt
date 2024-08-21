@@ -1,6 +1,6 @@
 package com.example.life.datasync
 
-import com.example.life.datasource.CacheableETLService
+import com.example.life.etl.CacheableETLService
 import kotlinx.coroutines.delay
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Service

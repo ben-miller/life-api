@@ -1,8 +1,8 @@
-package com.example.life.datasource
+package com.example.life.etl
 
-import com.example.life.Youtube
-import com.example.life.RedisService
-import com.example.life.UtilityService
+import com.example.life.model.Youtube
+import com.example.life.service.RedisService
+import com.example.life.service.UtilityService
 import org.springframework.stereotype.Service
 
 @Service
@@ -18,5 +18,9 @@ class YoutubeETLService(
         return utilityService.getYoutubeMetrics().let {
             Youtube(it.likedVideosCount)
         }
+    }
+
+    override suspend fun load(value: Youtube) {
+        TODO("Not yet implemented")
     }
 }

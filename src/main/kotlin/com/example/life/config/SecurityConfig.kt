@@ -1,4 +1,4 @@
-package com.example.life
+package com.example.life.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

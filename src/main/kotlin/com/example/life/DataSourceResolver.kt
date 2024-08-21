@@ -9,7 +9,8 @@ import com.example.life.GraphQLConstants.Fields.TIDAL
 import com.example.life.GraphQLConstants.Fields.TRELLO
 import com.example.life.GraphQLConstants.Fields.YOUTUBE
 import com.example.life.GraphQLConstants.TypeNames.SOURCE
-import com.example.life.datasource.*
+import com.example.life.etl.*
+import com.example.life.model.*
 import com.expediagroup.graphql.server.operations.Query
 import org.springframework.context.annotation.Profile
 import org.springframework.graphql.data.method.annotation.Argument

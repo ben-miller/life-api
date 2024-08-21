@@ -1,4 +1,4 @@
-package com.example.life
+package com.example.life.config
 
 import io.grpc.ManagedChannel
 import io.grpc.ManagedChannelBuilder

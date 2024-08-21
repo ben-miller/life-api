@@ -1,4 +1,4 @@
-package com.example.life
+package com.example.life.service
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import kotlinx.coroutines.reactor.awaitSingle

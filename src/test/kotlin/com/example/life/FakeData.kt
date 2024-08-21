@@ -1,5 +1,7 @@
 package com.example.life
 
+import com.example.life.model.*
+
 val data = Source(
     airtable = Airtable(
         job_search = JobSearch(
