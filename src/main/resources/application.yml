@@ -1,6 +1,6 @@
 spring:
   application:
-    name: kpi-dashboard-api
+    name: life-api
   graphql:
     graphiql:
       enabled: true
