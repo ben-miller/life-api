@@ -2,16 +2,19 @@ package com.example.life.etl
 
 import com.example.life.service.RedisService
 import com.example.life.model.Trello
+import com.example.life.repository.DataSourceRepository
 import com.example.life.service.UtilityService
 import org.springframework.stereotype.Service
 
 @Service
 class TrelloETLService(
     private val utilityService: UtilityService,
+    dataSourceRepository: DataSourceRepository,
     redisService: RedisService
 ) : CacheableETLService<Trello>(
     redisService,
-    "source.trello",
+    dataSourceRepository,
+    "trello",
     Trello::class.java
 ) {
     override suspend fun extract(): Trello {

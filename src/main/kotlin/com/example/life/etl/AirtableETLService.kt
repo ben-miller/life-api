@@ -2,6 +2,7 @@ package com.example.life.etl
 
 import com.example.life.model.Airtable
 import com.example.life.model.JobSearch
+import com.example.life.repository.DataSourceRepository
 import com.example.life.service.RedisService
 import com.example.life.service.UtilityService
 import org.springframework.stereotype.Service
@@ -10,10 +11,12 @@ import org.springframework.stereotype.Service
 @Service
 class AirtableETLService(
     private val utilityService: UtilityService,
+    dataSourceRepository: DataSourceRepository,
     redisService: RedisService
 ) : CacheableETLService<Airtable>(
     redisService,
-    "source.airtable",
+    dataSourceRepository,
+    "airtable",
     Airtable::class.java
 ) {
     override suspend fun extract(): Airtable {

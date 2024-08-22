@@ -1,6 +1,7 @@
 package com.example.life.etl
 
 import com.example.life.model.Obsidian
+import com.example.life.repository.DataSourceRepository
 import com.example.life.service.RedisService
 import com.example.life.service.UtilityService
 import org.springframework.stereotype.Service
@@ -8,10 +9,12 @@ import org.springframework.stereotype.Service
 @Service
 class ObsidianETLService(
     private val utilityService: UtilityService,
+    dataSourceRepository: DataSourceRepository,
     redisService: RedisService
 ) : CacheableETLService<Obsidian>(
     redisService,
-    "source.obsidian",
+    dataSourceRepository,
+    "obsidian",
     Obsidian::class.java
 ) {
     override suspend fun extract(): Obsidian {

@@ -1,6 +1,7 @@
 package com.example.life.etl
 
 import com.example.life.model.OrgMode
+import com.example.life.repository.DataSourceRepository
 import com.example.life.service.RedisService
 import com.example.life.service.UtilityService
 import org.springframework.stereotype.Service
@@ -8,10 +9,12 @@ import org.springframework.stereotype.Service
 @Service
 class OrgModeETLService(
     private val utilityService: UtilityService,
+    dataSourceRepository: DataSourceRepository,
     redisService: RedisService
 ) : CacheableETLService<OrgMode>(
     redisService,
-    "source.orgMode",
+    dataSourceRepository,
+    "orgMode",
     OrgMode::class.java
 ) {
     override suspend fun extract(): OrgMode {
