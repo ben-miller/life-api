@@ -1,12 +1,12 @@
 CREATE TABLE DataSources (
-                             source_id SERIAL PRIMARY KEY,
+                             id SERIAL PRIMARY KEY,
                              source_name TEXT NOT NULL,
                              last_updated TIMESTAMP
 );
 
 CREATE TABLE DataPoints (
-                            point_id SERIAL PRIMARY KEY,
-                            source_id INTEGER REFERENCES DataSources(source_id),
+                            id SERIAL PRIMARY KEY,
+                            source_id INTEGER REFERENCES DataSources(id),
                             metric_name TEXT NOT NULL,
                             last_value REAL,
                             last_updated TIMESTAMP
@@ -14,7 +14,7 @@ CREATE TABLE DataPoints (
 
 CREATE TABLE DataValues (
                             value_id SERIAL PRIMARY KEY,
-                            point_id INTEGER REFERENCES DataPoints(point_id),
+                            point_id INTEGER REFERENCES DataPoints(id),
                             "value" REAL,
                             recorded_at TIMESTAMP
 );

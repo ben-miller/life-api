@@ -13,6 +13,11 @@ spring:
     url: r2dbc:postgresql://localhost:5432/your_database
     username: your_username
     password: your_password
+  flyway:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/your_database
+    enabled: true
+    locations: classpath:db/migration
 
 graphql:
   packages:

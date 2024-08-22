@@ -51,6 +51,8 @@ dependencies {
 	implementation("com.google.protobuf:protobuf-java:4.27.3")
 	implementation("io.grpc:grpc-stub:1.66.0")
 
+	implementation("org.flywaydb:flyway-database-postgresql")
+	implementation("org.postgresql:postgresql")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
