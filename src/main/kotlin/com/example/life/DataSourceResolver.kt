@@ -37,34 +37,34 @@ class DataSourceResolver(
     }
 
     @SchemaMapping(typeName = SOURCE, field = AIRTABLE)
-    suspend fun airtable(@Argument forceRefresh: Boolean = false): Airtable =
+    suspend fun airtable(@Argument forceRefresh: Boolean = false): AirtableDataSample =
         airtableDataSource.fetchWithCache(forceRefresh)
 
     @SchemaMapping(typeName = SOURCE, field = OBSIDIAN)
-    suspend fun obsidian(@Argument forceRefresh: Boolean = false): Obsidian =
+    suspend fun obsidian(@Argument forceRefresh: Boolean = false): ObsidianDataSample =
         obsidianDataSource.fetchWithCache(forceRefresh)
 
     @SchemaMapping(typeName = SOURCE, field = TRELLO)
-    suspend fun trello(@Argument forceRefresh: Boolean = false): Trello =
+    suspend fun trello(@Argument forceRefresh: Boolean = false): TrelloDataSample =
         trelloDataSource.fetchWithCache(forceRefresh)
 
     @SchemaMapping(typeName = SOURCE, field = YOUTUBE)
-    suspend fun youtube(@Argument forceRefresh: Boolean = false): Youtube =
+    suspend fun youtube(@Argument forceRefresh: Boolean = false): YoutubeDataSample =
         youtubeDataSource.fetchWithCache(forceRefresh)
 
     @SchemaMapping(typeName = SOURCE, field = TIDAL)
-    suspend fun tidal(@Argument forceRefresh: Boolean = false): Tidal =
+    suspend fun tidal(@Argument forceRefresh: Boolean = false): TidalDataSample =
         tidalDataSource.fetchWithCache(forceRefresh)
 
     @SchemaMapping(typeName = SOURCE, field = FIREFOX)
-    suspend fun firefox(@Argument forceRefresh: Boolean = false): Firefox =
+    suspend fun firefox(@Argument forceRefresh: Boolean = false): FirefoxDataSample =
         firefoxDataSource.fetchWithCache(forceRefresh)
 
     @SchemaMapping(typeName = SOURCE, field = ORG_MODE)
-    suspend fun orgMode(@Argument forceRefresh: Boolean = false): OrgMode =
+    suspend fun orgMode(@Argument forceRefresh: Boolean = false): OrgModeDataSample =
         orgModeDataSource.fetchWithCache(forceRefresh)
 
     @SchemaMapping(typeName = SOURCE, field = CALENDAR)
-    suspend fun calendar(@Argument forceRefresh: Boolean = false): Calendar =
+    suspend fun calendar(@Argument forceRefresh: Boolean = false): CalendarDataSample =
         calendarDataSource.fetchWithCache(forceRefresh)
 }

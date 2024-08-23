@@ -1,12 +1,12 @@
 package com.example.life.model
 
 data class Source(
-    var airtable: Airtable? = null,
-    var obsidian: Obsidian? = null,
-    var trello: Trello? = null,
-    var tidal: Tidal? = null,
-    var firefox: Firefox? = null,
-    var orgMode: OrgMode? = null,
-    var youtube: Youtube? = null,
-    var calendar: Calendar? = null
+    var airtable: AirtableDataSample? = null,
+    var obsidian: ObsidianDataSample? = null,
+    var trello: TrelloDataSample? = null,
+    var tidal: TidalDataSample? = null,
+    var firefox: FirefoxDataSample? = null,
+    var orgMode: OrgModeDataSample? = null,
+    var youtube: YoutubeDataSample? = null,
+    var calendar: CalendarDataSample? = null
 )

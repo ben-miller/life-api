@@ -1,6 +1,5 @@
 package com.example.life.repository
 
-import com.example.life.entity.DataSourceEntity
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach

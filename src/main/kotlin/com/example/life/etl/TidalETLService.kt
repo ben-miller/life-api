@@ -1,7 +1,6 @@
 package com.example.life.etl
 
-import com.example.life.model.Tidal
-import com.example.life.repository.DataSourceRepository
+import com.example.life.model.TidalDataSample
 import com.example.life.service.RedisService
 import com.example.life.service.UtilityService
 import org.springframework.stereotype.Service
@@ -9,21 +8,18 @@ import org.springframework.stereotype.Service
 @Service
 class TidalETLService(
     private val utilityService: UtilityService,
-    dataSourceRepository: DataSourceRepository,
     redisService: RedisService
-) : CacheableETLService<Tidal>(
+) : CacheableETLService<TidalDataSample>(
     redisService,
-    dataSourceRepository,
     "tidal",
-    Tidal::class.java
+    TidalDataSample::class.java
 ) {
-    override suspend fun extract(): Tidal {
+    override suspend fun extract(): TidalDataSample {
         return utilityService.getTidalMetrics().let {
-            Tidal(it.uncategorizedTracks)
+            TidalDataSample(it.uncategorizedTracks)
         }
     }
 
-    override suspend fun load(value: Tidal) {
-        TODO("Not yet implemented")
+    override suspend fun load(value: TidalDataSample) {
     }
 }

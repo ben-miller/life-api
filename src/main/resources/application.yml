@@ -18,6 +18,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/your_database
     enabled: true
     locations: classpath:db/migration
+    baseline-on-migrate: true
 
 graphql:
   packages:

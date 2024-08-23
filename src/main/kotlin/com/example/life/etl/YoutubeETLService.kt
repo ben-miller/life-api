@@ -1,7 +1,6 @@
 package com.example.life.etl
 
-import com.example.life.model.Youtube
-import com.example.life.repository.DataSourceRepository
+import com.example.life.model.YoutubeDataSample
 import com.example.life.service.RedisService
 import com.example.life.service.UtilityService
 import org.springframework.stereotype.Service
@@ -9,21 +8,18 @@ import org.springframework.stereotype.Service
 @Service
 class YoutubeETLService(
     private val utilityService: UtilityService,
-    dataSourceRepository: DataSourceRepository,
     redisService: RedisService
-) : CacheableETLService<Youtube>(
+) : CacheableETLService<YoutubeDataSample>(
     redisService,
-    dataSourceRepository,
     "youtube",
-    Youtube::class.java
+    YoutubeDataSample::class.java
 ) {
-    override suspend fun extract(): Youtube {
+    override suspend fun extract(): YoutubeDataSample {
         return utilityService.getYoutubeMetrics().let {
-            Youtube(it.likedVideosCount)
+            YoutubeDataSample(it.likedVideosCount)
         }
     }
 
-    override suspend fun load(value: Youtube) {
-        TODO("Not yet implemented")
+    override suspend fun load(value: YoutubeDataSample) {
     }
 }

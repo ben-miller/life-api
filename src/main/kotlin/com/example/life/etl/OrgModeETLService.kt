@@ -1,7 +1,6 @@
 package com.example.life.etl
 
-import com.example.life.model.OrgMode
-import com.example.life.repository.DataSourceRepository
+import com.example.life.model.OrgModeDataSample
 import com.example.life.service.RedisService
 import com.example.life.service.UtilityService
 import org.springframework.stereotype.Service
@@ -9,21 +8,18 @@ import org.springframework.stereotype.Service
 @Service
 class OrgModeETLService(
     private val utilityService: UtilityService,
-    dataSourceRepository: DataSourceRepository,
     redisService: RedisService
-) : CacheableETLService<OrgMode>(
+) : CacheableETLService<OrgModeDataSample>(
     redisService,
-    dataSourceRepository,
     "orgMode",
-    OrgMode::class.java
+    OrgModeDataSample::class.java
 ) {
-    override suspend fun extract(): OrgMode {
+    override suspend fun extract(): OrgModeDataSample {
         return utilityService.getOrgModeMetrics().let {
-            OrgMode(it.inboxesCount, it.inboxTotalItems)
+            OrgModeDataSample(it.inboxesCount, it.inboxTotalItems)
         }
     }
 
-    override suspend fun load(value: OrgMode) {
-        TODO("Not yet implemented")
+    override suspend fun load(value: OrgModeDataSample) {
     }
 }

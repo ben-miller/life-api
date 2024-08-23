@@ -1,29 +1,25 @@
 package com.example.life.etl
 
 import com.example.life.service.RedisService
-import com.example.life.model.Trello
-import com.example.life.repository.DataSourceRepository
+import com.example.life.model.TrelloDataSample
 import com.example.life.service.UtilityService
 import org.springframework.stereotype.Service
 
 @Service
 class TrelloETLService(
     private val utilityService: UtilityService,
-    dataSourceRepository: DataSourceRepository,
     redisService: RedisService
-) : CacheableETLService<Trello>(
+) : CacheableETLService<TrelloDataSample>(
     redisService,
-    dataSourceRepository,
     "trello",
-    Trello::class.java
+    TrelloDataSample::class.java
 ) {
-    override suspend fun extract(): Trello {
+    override suspend fun extract(): TrelloDataSample {
         return utilityService.getTrelloMetrics().let {
-            Trello(it.inboxSize)
+            TrelloDataSample(it.inboxSize)
         }
     }
 
-    override suspend fun load(value: Trello) {
-        TODO("Not yet implemented")
+    override suspend fun load(value: TrelloDataSample) {
     }
 }

@@ -1,6 +1,6 @@
 package com.example.life.model
 
-data class JobSearch(
+data class JobSearchDataSample(
     val ignored_applications: Int,
     val rejected_applications: Int,
     val rejected_after_phone_screening: Int,
