@@ -29,7 +29,7 @@ class SecurityConfig {
     @Bean
     fun corsFilter(): CorsWebFilter {
         val corsConfig = CorsConfiguration()
-        corsConfig.allowedOrigins = listOf("http://localhost:3000")
+        corsConfig.allowedOrigins = listOf("http://localhost:3000", "app://obsidian.md")
         corsConfig.allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "OPTIONS")
         corsConfig.allowedHeaders = listOf("Authorization", "Content-Type")
         corsConfig.allowCredentials = true
