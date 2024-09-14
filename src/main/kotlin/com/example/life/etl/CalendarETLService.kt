@@ -20,7 +20,13 @@ class CalendarETLService(
                 dev_total_hours = it.devTotalHours,
                 chores_total_hours = it.choresTotalHours,
                 meditation_total_hours = it.meditationTotalHours,
-                fitness_total_hours = it.fitnessTotalHours
+                running_total_hours = it.weightTrainingTotalHours,
+                weight_training_total_hours = it.weightTrainingTotalHours,
+                dev_total_sessions = it.devTotalSessions,
+                chores_total_sessions = it.choresTotalSessions,
+                meditation_total_sessions = it.meditationTotalSessions,
+                running_total_sessions = it.runningTotalSessions,
+                weight_training_total_sessions = it.weightTrainingTotalSessions
             )
         }
     }
