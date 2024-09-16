@@ -38,16 +38,8 @@ message TidalMetrics {
 }
 
 message CalendarMetrics {
-  double dev_total_hours = 1;
-  double chores_total_hours = 2;
-  double meditation_total_hours = 3;
-  double running_total_hours = 4;
-  double weight_training_total_hours = 5;
-  int32 dev_total_sessions = 6;
-  int32 chores_total_sessions = 7;
-  int32 meditation_total_sessions = 8;
-  int32 running_total_sessions = 9;
-  int32 weight_training_total_sessions = 10;
+  map<string, int32> total_sessions = 1;
+  map<string, double> total_hours = 2;
 }
 
 message AirtableJobSearchMetrics {
