@@ -54,7 +54,8 @@ class CalendarETLService(
                 meditation = getActivityMetrics("meditation_total_hours", "meditation_total_sessions"),
                 running = getActivityMetrics("running_total_hours", "running_total_sessions"),
                 weight_training = getActivityMetrics("weight_training_total_hours", "weight_training_total_sessions"),
-                job_search = getActivityMetrics("job_search_total_hours", "job_search_total_sessions")
+                job_search = getActivityMetrics("job_search_total_hours", "job_search_total_sessions"),
+                leet_code = getActivityMetrics("leet_code_total_hours", "leet_code_total_sessions")
             )
         }
     }

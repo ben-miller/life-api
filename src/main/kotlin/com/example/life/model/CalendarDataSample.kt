@@ -11,5 +11,6 @@ data class CalendarDataSample(
     val meditation: ActivityMetrics? = null,
     val running: ActivityMetrics? = null,
     val weight_training: ActivityMetrics? = null,
-    val job_search: ActivityMetrics? = null
+    val job_search: ActivityMetrics? = null,
+    val leet_code: ActivityMetrics? = null
 )

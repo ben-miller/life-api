@@ -68,6 +68,7 @@ type Calendar {
     running: ActivityMetrics
     weight_training: ActivityMetrics
     job_search: ActivityMetrics
+    leet_code: ActivityMetrics
 }
 
 type Tidal {
