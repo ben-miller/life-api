@@ -56,17 +56,17 @@ type Youtube {
     liked_videos: Int
 }
 
+type ActivityMetrics {
+    total_hours: Float
+    total_sessions: Int
+}
+
 type Calendar {
-    dev_total_hours: Float
-    chores_total_hours: Float
-    meditation_total_hours: Float
-    running_total_hours: Float
-    weight_training_total_hours: Float
-    dev_total_sessions: Int
-    chores_total_sessions: Int
-    meditation_total_sessions: Int
-    running_total_sessions: Int
-    weight_training_total_sessions: Int
+    dev: ActivityMetrics
+    chores: ActivityMetrics
+    meditation: ActivityMetrics
+    running: ActivityMetrics
+    weight_training: ActivityMetrics
 }
 
 type Tidal {

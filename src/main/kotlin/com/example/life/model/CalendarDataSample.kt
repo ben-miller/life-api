@@ -1,14 +1,14 @@
 package com.example.life.model
 
+data class ActivityMetrics(
+    val total_hours: Double,
+    val total_sessions: Int
+)
+
 data class CalendarDataSample(
-    val dev_total_hours: Double,
-    val chores_total_hours: Double,
-    val meditation_total_hours: Double,
-    val running_total_hours: Double,
-    val weight_training_total_hours: Double,
-    val dev_total_sessions: Int,
-    val chores_total_sessions: Int,
-    val meditation_total_sessions: Int,
-    val running_total_sessions: Int,
-    val weight_training_total_sessions: Int
+    val dev: ActivityMetrics? = null,
+    val chores: ActivityMetrics? = null,
+    val meditation: ActivityMetrics? = null,
+    val running: ActivityMetrics? = null,
+    val weight_training: ActivityMetrics? = null
 )
