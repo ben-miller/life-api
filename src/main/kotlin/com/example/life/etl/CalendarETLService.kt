@@ -53,7 +53,8 @@ class CalendarETLService(
                 chores = getActivityMetrics("chores_total_hours", "chores_total_sessions"),
                 meditation = getActivityMetrics("meditation_total_hours", "meditation_total_sessions"),
                 running = getActivityMetrics("running_total_hours", "running_total_sessions"),
-                weight_training = getActivityMetrics("weight_training_total_hours", "weight_training_total_sessions")
+                weight_training = getActivityMetrics("weight_training_total_hours", "weight_training_total_sessions"),
+                job_search = getActivityMetrics("job_search_total_hours", "job_search_total_sessions")
             )
         }
     }

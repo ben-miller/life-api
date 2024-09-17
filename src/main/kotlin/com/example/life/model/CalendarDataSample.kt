@@ -10,5 +10,6 @@ data class CalendarDataSample(
     val chores: ActivityMetrics? = null,
     val meditation: ActivityMetrics? = null,
     val running: ActivityMetrics? = null,
-    val weight_training: ActivityMetrics? = null
+    val weight_training: ActivityMetrics? = null,
+    val job_search: ActivityMetrics? = null
 )

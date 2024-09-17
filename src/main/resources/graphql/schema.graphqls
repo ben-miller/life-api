@@ -67,6 +67,7 @@ type Calendar {
     meditation: ActivityMetrics
     running: ActivityMetrics
     weight_training: ActivityMetrics
+    job_search: ActivityMetrics
 }
 
 type Tidal {
