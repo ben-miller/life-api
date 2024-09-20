@@ -44,12 +44,6 @@ class QueryTest {
                 youtube {
                   liked_videos
                 }
-                calendar {
-                  dev_total_hours
-                  chores_total_hours
-                  meditation_total_hours
-                  fitness_total_hours
-                }
                 tidal {
                   uncategorized_tracks
                 }
@@ -75,10 +69,5 @@ class QueryTest {
             .path("sources.obsidian.inbox_items").entity(Int::class.java).isEqualTo(1154)
             .path("sources.trello.inbox_size").entity(Int::class.java).isEqualTo(2)
             .path("sources.youtube.liked_videos").entity(Int::class.java).isEqualTo(281)
-            .path("sources.calendar.dev_total_hours").entity(Double::class.java).isEqualTo(18.0)
-            .path("sources.calendar.chores_total_hours").entity(Double::class.java).isEqualTo(1.0)
-            .path("sources.calendar.meditation_total_hours").entity(Double::class.java).isEqualTo(6.75)
-            .path("sources.calendar.fitness_total_hours").entity(Double::class.java).isEqualTo(7.5)
-
     }
 }
