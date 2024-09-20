@@ -16,7 +16,7 @@ spring:
   flyway:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/your_database
-    enabled: true
+    enabled: false
     locations: classpath:db/migration
     baseline-on-migrate: true
 
