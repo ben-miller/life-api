@@ -1,6 +1,7 @@
 package com.example.life.etl
 
 import com.example.life.model.OrgModeDataSample
+import com.example.life.model.OrgModeTask
 import com.example.life.service.RedisService
 import com.example.life.service.UtilityService
 import org.springframework.stereotype.Service
@@ -16,7 +17,10 @@ class OrgModeETLService(
 ) {
     override suspend fun extract(): OrgModeDataSample {
         return utilityService.getOrgModeMetrics().let {
-            OrgModeDataSample(it.inboxesCount, it.inboxTotalItems)
+            OrgModeDataSample(
+                it.inboxesCount,
+                it.inboxTotalItems,
+                it.projectTasksList.map { OrgModeTask(it.task, it.state) })
         }
     }
 

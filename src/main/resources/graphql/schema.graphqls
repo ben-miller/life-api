@@ -39,9 +39,15 @@ type Obsidian {
     inbox_items: Int
 }
 
+type OrgModeTask {
+    task: String
+    state: String
+}
+
 type OrgMode {
     inboxes: Int
     inbox_items: Int
+    project_tasks: [OrgModeTask]
 }
 
 type Trello {
