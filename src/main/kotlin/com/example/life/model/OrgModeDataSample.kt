@@ -1,7 +1,7 @@
 package com.example.life.model
 
 data class OrgModeTask(
-    val task: String,
+    val label: String,
     val state: String
 )
 

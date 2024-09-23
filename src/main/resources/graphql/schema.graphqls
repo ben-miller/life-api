@@ -40,7 +40,7 @@ type Obsidian {
 }
 
 type OrgModeTask {
-    task: String
+    label: String
     state: String
 }
 
