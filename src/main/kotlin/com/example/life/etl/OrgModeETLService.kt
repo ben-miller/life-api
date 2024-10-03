@@ -18,7 +18,6 @@ class OrgModeETLService(
     override suspend fun extract(): OrgModeDataSample {
         return utilityService.getOrgModeMetrics().let {
             OrgModeDataSample(
-                it.inboxesCount,
                 it.inboxTotalItems,
                 it.projectTasksList.map { OrgModeTask(it.task, it.state) })
         }

@@ -6,7 +6,6 @@ data class OrgModeTask(
 )
 
 data class OrgModeDataSample(
-    val inboxes: Int,
     val inbox_items: Int,
     val project_tasks: List<OrgModeTask>
 )
