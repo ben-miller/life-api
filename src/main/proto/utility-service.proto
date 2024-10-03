@@ -16,8 +16,7 @@ service UtilityService {
 message EmptyRequest {}
 
 message ObsidianMetrics {
-  int32 inboxes_count = 1;
-  int32 inbox_total_items = 2;
+  int32 inbox_total_items = 1;
 }
 
 message FirefoxMetrics {

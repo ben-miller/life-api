@@ -20,7 +20,7 @@ class ObsidianETLService(
 ) {
     override suspend fun extract(): ObsidianDataSample {
         return utilityService.getObsidianMetrics().let {
-            ObsidianDataSample(it.inboxesCount, it.inboxTotalItems)
+            ObsidianDataSample(it.inboxTotalItems)
         }
     }
 
@@ -28,10 +28,8 @@ class ObsidianETLService(
         val lastEntry = obsidianDataSampleRepository.findLastSample()
 
         if (lastEntry == null ||
-            lastEntry.inboxes != lastSample.inboxes ||
             lastEntry.inboxItems != lastSample.inbox_items) {
             obsidianDataSampleRepository.save(ObsidianDataSampleEntity(
-                inboxes = lastSample.inboxes,
                 inboxItems = lastSample.inbox_items
             )).awaitSingle()
         }

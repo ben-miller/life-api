@@ -1,3 +1,3 @@
 package com.example.life.model
 
-data class ObsidianDataSample(val inboxes: Int, val inbox_items: Int)
+data class ObsidianDataSample(val inbox_items: Int)
