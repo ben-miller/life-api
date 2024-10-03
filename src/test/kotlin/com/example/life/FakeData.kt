@@ -16,7 +16,13 @@ val data = Source(
             interested = 47
         )
     ),
-    obsidian = ObsidianDataSample(inboxes = 68, inbox_items = 1154),
+    obsidian = ObsidianDataSample(
+        inbox_items = 1154,
+        inbox_dir_size = 44,
+        journal_inbox_dir_size = 13,
+        administrivia_inbox_dir_size = 45,
+        desktop_dir_size = 34
+    ),
     trello = TrelloDataSample(inbox_size = 2),
     youtube = YoutubeDataSample(liked_videos = 281),
     calendar = CalendarDataSample(
@@ -29,5 +35,5 @@ val data = Source(
     ),
     tidal = TidalDataSample(uncategorized_tracks = 40),
     firefox = FirefoxDataSample(bookmarks = 44),
-    orgMode = OrgModeDataSample(inboxes = 43, inbox_items = 55, listOf())
+    orgMode = OrgModeDataSample(inbox_items = 55, listOf())
 )

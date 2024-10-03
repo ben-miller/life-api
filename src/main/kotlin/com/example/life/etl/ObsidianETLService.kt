@@ -20,7 +20,13 @@ class ObsidianETLService(
 ) {
     override suspend fun extract(): ObsidianDataSample {
         return utilityService.getObsidianMetrics().let {
-            ObsidianDataSample(it.inboxTotalItems)
+            ObsidianDataSample(
+                inbox_items = it.inboxTotalItems,
+                inbox_dir_size = it.inboxDirSize,
+                journal_inbox_dir_size = it.journalInboxDirSize,
+                administrivia_inbox_dir_size = it.administriviaInboxDirSize,
+                desktop_dir_size = it.desktopDirSize
+            )
         }
     }
 
