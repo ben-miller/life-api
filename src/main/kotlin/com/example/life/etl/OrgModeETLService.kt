@@ -19,6 +19,7 @@ class OrgModeETLService(
         return utilityService.getOrgModeMetrics().let {
             OrgModeDataSample(
                 it.inboxTotalItems,
+                it.totalBugs,
                 it.projectTasksList.map { OrgModeTask(it.task, it.state) })
         }
     }

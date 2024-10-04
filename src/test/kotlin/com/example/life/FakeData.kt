@@ -35,5 +35,5 @@ val data = Source(
     ),
     tidal = TidalDataSample(uncategorized_tracks = 40),
     firefox = FirefoxDataSample(bookmarks = 44),
-    orgMode = OrgModeDataSample(inbox_items = 55, listOf())
+    orgMode = OrgModeDataSample(inbox_items = 55, total_bugs = 3, listOf())
 )

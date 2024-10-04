@@ -34,7 +34,8 @@ message OrgModeTask {
 
 message OrgModeMetrics {
   int32 inbox_total_items = 1;
-  repeated OrgModeTask project_tasks = 2;
+  int32 total_bugs = 2;
+  repeated OrgModeTask project_tasks = 3;
 }
 
 message YoutubeMetrics {

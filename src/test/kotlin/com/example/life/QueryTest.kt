@@ -35,7 +35,6 @@ class QueryTest {
                   }
                 }
                 obsidian {
-                  inboxes
                   inbox_items
                 }
                 trello {
