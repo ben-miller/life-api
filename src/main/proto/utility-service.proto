@@ -66,4 +66,5 @@ message AirtableJobSearchMetrics {
 
 message TrelloMetrics {
   int32 inbox_size = 1;
+  int32 shopping_inbox_size = 2;
 }

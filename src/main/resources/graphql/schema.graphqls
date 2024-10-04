@@ -56,6 +56,7 @@ type OrgMode {
 
 type Trello {
     inbox_size: Int
+    shopping_inbox_size: Int
 }
 
 type Google {

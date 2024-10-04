@@ -16,7 +16,10 @@ class TrelloETLService(
 ) {
     override suspend fun extract(): TrelloDataSample {
         return utilityService.getTrelloMetrics().let {
-            TrelloDataSample(it.inboxSize)
+            TrelloDataSample(
+                it.inboxSize,
+                it.shoppingInboxSize
+            )
         }
     }
 

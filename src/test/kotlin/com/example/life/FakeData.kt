@@ -24,7 +24,7 @@ val data = Source(
         desktop_inbox_dir = 34,
         library_inbox_dir = 31,
     ),
-    trello = TrelloDataSample(inbox_size = 2),
+    trello = TrelloDataSample(inbox_size = 2, shopping_inbox_size = 33),
     youtube = YoutubeDataSample(liked_videos = 281),
     calendar = CalendarDataSample(
         dev = ActivityMetrics(total_hours = 18.0, total_sessions = 3),
