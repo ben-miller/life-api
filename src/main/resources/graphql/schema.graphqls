@@ -35,11 +35,12 @@ type Firefox {
 }
 
 type Obsidian {
-    inbox_items: Int
-    inbox_dir_size: Int
-    journal_inbox_dir_size: Int
-    administrivia_inbox_dir_size: Int
-    desktop_dir_size: Int
+    inbox_total_items: Int
+    life_inbox_dir: Int
+    journal_inbox_dir: Int
+    administrivia_inbox_dir: Int
+    desktop_inbox_dir: Int
+    library_inbox_dir: Int
 }
 
 type OrgModeTask {

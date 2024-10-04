@@ -21,11 +21,12 @@ class ObsidianETLService(
     override suspend fun extract(): ObsidianDataSample {
         return utilityService.getObsidianMetrics().let {
             ObsidianDataSample(
-                inbox_items = it.inboxTotalItems,
-                inbox_dir_size = it.inboxDirSize,
-                journal_inbox_dir_size = it.journalInboxDirSize,
-                administrivia_inbox_dir_size = it.administriviaInboxDirSize,
-                desktop_dir_size = it.desktopDirSize
+                inbox_total_items = it.inboxTotalItems,
+                life_inbox_dir = it.lifeInboxDir,
+                journal_inbox_dir = it.journalInboxDir,
+                administrivia_inbox_dir = it.administriviaInboxDir,
+                desktop_inbox_dir = it.desktopInboxDir,
+                library_inbox_dir = it.libraryInboxDir,
             )
         }
     }
@@ -34,9 +35,9 @@ class ObsidianETLService(
         val lastEntry = obsidianDataSampleRepository.findLastSample()
 
         if (lastEntry == null ||
-            lastEntry.inboxItems != lastSample.inbox_items) {
+            lastEntry.inboxItems != lastSample.inbox_total_items) {
             obsidianDataSampleRepository.save(ObsidianDataSampleEntity(
-                inboxItems = lastSample.inbox_items
+                inboxItems = lastSample.inbox_total_items
             )).awaitSingle()
         }
     }

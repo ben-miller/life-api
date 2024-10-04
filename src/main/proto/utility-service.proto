@@ -17,10 +17,11 @@ message EmptyRequest {}
 
 message ObsidianMetrics {
   int32 inbox_total_items = 1;
-  int32 journal_inbox_dir_size = 2;
-  int32 administrivia_inbox_dir_size = 3;
-  int32 desktop_dir_size = 4;
-  int32 inbox_dir_size = 5;
+  int32 life_inbox_dir = 2;
+  int32 journal_inbox_dir = 3;
+  int32 administrivia_inbox_dir = 4;
+  int32 desktop_inbox_dir = 5;
+  int32 library_inbox_dir = 6;
 }
 
 message FirefoxMetrics {

@@ -35,7 +35,7 @@ class QueryTest {
                   }
                 }
                 obsidian {
-                  inbox_items
+                  inbox_total_items
                 }
                 trello {
                   inbox_size
@@ -64,7 +64,7 @@ class QueryTest {
             .path("sources.airtable.job_search.in_progress").entity(Int::class.java).isEqualTo(17)
             .path("sources.airtable.job_search.total_sent").entity(Int::class.java).isEqualTo(88)
             .path("sources.airtable.job_search.interested").entity(Int::class.java).isEqualTo(47)
-            .path("sources.obsidian.inbox_items").entity(Int::class.java).isEqualTo(1154)
+            .path("sources.obsidian.inbox_total_items").entity(Int::class.java).isEqualTo(1154)
             .path("sources.trello.inbox_size").entity(Int::class.java).isEqualTo(2)
             .path("sources.youtube.liked_videos").entity(Int::class.java).isEqualTo(281)
     }

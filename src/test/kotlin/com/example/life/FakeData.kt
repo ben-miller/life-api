@@ -17,11 +17,12 @@ val data = Source(
         )
     ),
     obsidian = ObsidianDataSample(
-        inbox_items = 1154,
-        inbox_dir_size = 44,
-        journal_inbox_dir_size = 13,
-        administrivia_inbox_dir_size = 45,
-        desktop_dir_size = 34
+        inbox_total_items = 1154,
+        life_inbox_dir = 44,
+        journal_inbox_dir = 13,
+        administrivia_inbox_dir = 45,
+        desktop_inbox_dir = 34,
+        library_inbox_dir = 31,
     ),
     trello = TrelloDataSample(inbox_size = 2),
     youtube = YoutubeDataSample(liked_videos = 281),
