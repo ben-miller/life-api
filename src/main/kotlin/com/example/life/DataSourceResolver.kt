@@ -37,34 +37,34 @@ class DataSourceResolver(
     }
 
     @SchemaMapping(typeName = SOURCE, field = AIRTABLE)
-    suspend fun airtable(@Argument forceRefresh: Boolean = false): AirtableDataSample =
-        airtableDataSource.fetchWithCache(forceRefresh)
+    suspend fun airtable(@Argument force_refresh: Boolean = false): AirtableDataSample =
+        airtableDataSource.fetchWithCache(force_refresh)
 
     @SchemaMapping(typeName = SOURCE, field = OBSIDIAN)
-    suspend fun obsidian(@Argument forceRefresh: Boolean = false): ObsidianDataSample =
-        obsidianDataSource.fetchWithCache(forceRefresh)
+    suspend fun obsidian(@Argument force_refresh: Boolean = false): ObsidianDataSample =
+        obsidianDataSource.fetchWithCache(force_refresh)
 
     @SchemaMapping(typeName = SOURCE, field = TRELLO)
-    suspend fun trello(@Argument forceRefresh: Boolean = false): TrelloDataSample =
-        trelloDataSource.fetchWithCache(forceRefresh)
+    suspend fun trello(@Argument force_refresh: Boolean = false): TrelloDataSample =
+        trelloDataSource.fetchWithCache(force_refresh)
 
     @SchemaMapping(typeName = SOURCE, field = YOUTUBE)
-    suspend fun youtube(@Argument forceRefresh: Boolean = false): YoutubeDataSample =
-        youtubeDataSource.fetchWithCache(forceRefresh)
+    suspend fun youtube(@Argument force_refresh: Boolean = false): YoutubeDataSample =
+        youtubeDataSource.fetchWithCache(force_refresh)
 
     @SchemaMapping(typeName = SOURCE, field = TIDAL)
-    suspend fun tidal(@Argument forceRefresh: Boolean = false): TidalDataSample =
-        tidalDataSource.fetchWithCache(forceRefresh)
+    suspend fun tidal(@Argument force_refresh: Boolean = false): TidalDataSample =
+        tidalDataSource.fetchWithCache(force_refresh)
 
     @SchemaMapping(typeName = SOURCE, field = FIREFOX)
-    suspend fun firefox(@Argument forceRefresh: Boolean = false): FirefoxDataSample =
-        firefoxDataSource.fetchWithCache(forceRefresh)
+    suspend fun firefox(@Argument force_refresh: Boolean = false): FirefoxDataSample =
+        firefoxDataSource.fetchWithCache(force_refresh)
 
     @SchemaMapping(typeName = SOURCE, field = ORG_MODE)
-    suspend fun orgMode(@Argument forceRefresh: Boolean = false): OrgModeDataSample =
-        orgModeDataSource.fetchWithCache(forceRefresh)
+    suspend fun orgMode(@Argument force_refresh: Boolean = false): OrgModeDataSample =
+        orgModeDataSource.fetchWithCache(force_refresh)
 
     @SchemaMapping(typeName = SOURCE, field = CALENDAR)
-    suspend fun calendar(@Argument forceRefresh: Boolean = false): CalendarDataSample =
-        calendarDataSource.fetchWithCache(forceRefresh)
+    suspend fun calendar(@Argument force_refresh: Boolean = false): CalendarDataSample =
+        calendarDataSource.fetchWithCache(force_refresh)
 }
