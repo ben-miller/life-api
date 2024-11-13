@@ -1,6 +1,5 @@
 package com.example.life
 
-import com.example.life.GraphQLConstants.Fields.AIRTABLE
 import com.example.life.GraphQLConstants.Fields.CALENDAR
 import com.example.life.GraphQLConstants.Fields.FIREFOX
 import com.example.life.GraphQLConstants.Fields.OBSIDIAN
@@ -21,7 +20,6 @@ import org.springframework.stereotype.Controller
 @Controller
 @Profile("!test")
 class DataSourceResolver(
-    private val airtableDataSource: AirtableETLService,
     private val obsidianDataSource: ObsidianETLService,
     private val trelloDataSource: TrelloETLService,
     private val youtubeDataSource: YoutubeETLService,
@@ -35,10 +33,6 @@ class DataSourceResolver(
     suspend fun sources(): Source {
         return Source()
     }
-
-    @SchemaMapping(typeName = SOURCE, field = AIRTABLE)
-    suspend fun airtable(@Argument force_refresh: Boolean = false): AirtableDataSample =
-        airtableDataSource.fetchWithCache(force_refresh)
 
     @SchemaMapping(typeName = SOURCE, field = OBSIDIAN)
     suspend fun obsidian(@Argument force_refresh: Boolean = false): ObsidianDataSample =

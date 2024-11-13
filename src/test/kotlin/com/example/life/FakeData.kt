@@ -3,19 +3,6 @@ package com.example.life
 import com.example.life.model.*
 
 val data = Source(
-    airtable = AirtableDataSample(
-        job_search = JobSearchDataSample(
-            ignored_applications = 39,
-            rejected_applications = 26,
-            rejected_after_phone_screening = 2,
-            rejected_after_technical_screening = 2,
-            rejected_after_full_interview = 2,
-            total_rejections = 71,
-            in_progress = 17,
-            total_sent = 88,
-            interested = 47
-        )
-    ),
     obsidian = ObsidianDataSample(
         inbox_total_items = 1154,
         life_inbox_dir = 44,

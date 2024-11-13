@@ -21,19 +21,6 @@ class QueryTest {
         val query = """
             query {
               sources {
-                airtable {
-                  job_search {
-                    ignored_applications
-                    rejected_applications
-                    rejected_after_phone_screening
-                    rejected_after_technical_screening
-                    rejected_after_full_interview
-                    total_rejections
-                    in_progress
-                    total_sent
-                    interested
-                  }
-                }
                 obsidian {
                   inbox_total_items
                 }
@@ -55,15 +42,6 @@ class QueryTest {
             .also {
                 println("result: " + it.path(""))
             }
-            .path("sources.airtable.job_search.ignored_applications").entity(Int::class.java).isEqualTo(39)
-            .path("sources.airtable.job_search.rejected_applications").entity(Int::class.java).isEqualTo(26)
-            .path("sources.airtable.job_search.rejected_after_phone_screening").entity(Int::class.java).isEqualTo(2)
-            .path("sources.airtable.job_search.rejected_after_technical_screening").entity(Int::class.java).isEqualTo(2)
-            .path("sources.airtable.job_search.rejected_after_full_interview").entity(Int::class.java).isEqualTo(2)
-            .path("sources.airtable.job_search.total_rejections").entity(Int::class.java).isEqualTo(71)
-            .path("sources.airtable.job_search.in_progress").entity(Int::class.java).isEqualTo(17)
-            .path("sources.airtable.job_search.total_sent").entity(Int::class.java).isEqualTo(88)
-            .path("sources.airtable.job_search.interested").entity(Int::class.java).isEqualTo(47)
             .path("sources.obsidian.inbox_total_items").entity(Int::class.java).isEqualTo(1154)
             .path("sources.trello.inbox_size").entity(Int::class.java).isEqualTo(2)
             .path("sources.youtube.liked_videos").entity(Int::class.java).isEqualTo(281)

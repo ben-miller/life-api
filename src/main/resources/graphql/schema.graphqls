@@ -3,7 +3,6 @@ type Query {
 }
 
 type Source {
-    airtable(force_refresh: Boolean = false): Airtable
     trello(force_refresh: Boolean = false): Trello
     google(force_refresh: Boolean = false): Google
     tidal(force_refresh: Boolean = false): Tidal
@@ -12,22 +11,6 @@ type Source {
     firefox(force_refresh: Boolean = false): Firefox
     calendar(force_refresh: Boolean = false): Calendar
     youtube(force_refresh: Boolean = false): Youtube
-}
-
-type Airtable {
-    job_search: JobSearch
-}
-
-type JobSearch {
-    ignored_applications: Int
-    rejected_applications: Int
-    rejected_after_phone_screening: Int
-    rejected_after_technical_screening: Int
-    rejected_after_full_interview: Int
-    total_rejections: Int
-    in_progress: Int
-    total_sent: Int
-    interested: Int
 }
 
 type Firefox {

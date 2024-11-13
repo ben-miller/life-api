@@ -9,7 +9,6 @@ service UtilityService {
   rpc GetYoutubeMetrics(EmptyRequest) returns(YoutubeMetrics);
   rpc GetTidalMetrics(EmptyRequest) returns(TidalMetrics);
   rpc GetCalendarMetrics(EmptyRequest) returns(CalendarMetrics);
-  rpc GetAirtableJobSearchMetrics(EmptyRequest) returns(AirtableJobSearchMetrics);
   rpc GetTrelloMetrics(EmptyRequest) returns(TrelloMetrics);
 }
 
@@ -50,18 +49,6 @@ message TidalMetrics {
 message CalendarMetrics {
   map<string, int32> total_sessions = 1;
   map<string, double> total_hours = 2;
-}
-
-message AirtableJobSearchMetrics {
-  int32 ignored_applications = 1;
-  int32 rejected_applications = 2;
-  int32 rejected_after_phone_screening = 3;
-  int32 rejected_after_technical_screening = 4;
-  int32 rejected_after_full_interview = 5;
-  int32 total_rejections = 6;
-  int32 in_progress = 7;
-  int32 total_sent = 8;
-  int32 interested = 9;
 }
 
 message TrelloMetrics {

@@ -11,9 +11,6 @@ class UtilityServiceImpl(
     private val stub: UtilityServiceGrpcKt.UtilityServiceCoroutineStub
 ) : UtilityService {
     override suspend fun getObsidianMetrics(): ObsidianMetrics = stub.getObsidianMetrics(EmptyReq)
-    override suspend fun getAirtableJobSearchMetrics(): AirtableJobSearchMetrics = stub.getAirtableJobSearchMetrics(
-        EmptyReq
-    )
     override suspend fun getFirefoxMetrics(): FirefoxMetrics = stub.getFirefoxMetrics(EmptyReq)
     override suspend fun getOrgModeMetrics(): OrgModeMetrics = stub.getOrgModeMetrics(EmptyReq)
     override suspend fun getYoutubeMetrics(): YoutubeMetrics = stub.getYoutubeMetrics(EmptyReq)

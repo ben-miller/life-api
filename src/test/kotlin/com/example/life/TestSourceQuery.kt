@@ -15,11 +15,6 @@ class TestSourceQuery : Query {
         return data
     }
 
-    @SchemaMapping(typeName = "Source", field = "airtable")
-    fun airtable(source: Source): AirtableDataSample {
-        return source.airtable!!
-    }
-
     @SchemaMapping(typeName = "Source", field = "obsidian")
     fun obsidian(source: Source): ObsidianDataSample {
         return source.obsidian!!

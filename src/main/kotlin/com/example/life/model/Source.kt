@@ -1,7 +1,6 @@
 package com.example.life.model
 
 data class Source(
-    var airtable: AirtableDataSample? = null,
     var obsidian: ObsidianDataSample? = null,
     var trello: TrelloDataSample? = null,
     var tidal: TidalDataSample? = null,
