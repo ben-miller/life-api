@@ -2,22 +2,22 @@ package com.example.life.etl
 
 import com.example.life.model.FirefoxDataSample
 import com.example.life.service.RedisService
-import com.example.life.service.UtilityService
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 
 @Service
 class FirefoxETLService(
-    private val utilityService: UtilityService,
-    redisService: RedisService
+    redisService: RedisService,
+    @Value("\${local_data.firefox_dir}") private val firefoxDir: String
 ) : CacheableETLService<FirefoxDataSample>(
     redisService,
     "firefox",
     FirefoxDataSample::class.java
 ) {
     override suspend fun extract(): FirefoxDataSample {
-        return utilityService.getFirefoxMetrics().let {
-            FirefoxDataSample(it.bookmarksCount)
-        }
+        System.out.println("firefox dir: ${this.firefoxDir}")
+        // TODO Use real data
+        return FirefoxDataSample(22)
     }
 
     override suspend fun load(lastSample: FirefoxDataSample) {

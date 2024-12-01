@@ -32,8 +32,8 @@ type OrgModeTask {
 }
 
 type OrgMode {
-    inboxes: Int
     inbox_items: Int
+    total_bugs: Int
     project_tasks: [OrgModeTask]
 }
 
