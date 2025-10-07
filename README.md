@@ -91,4 +91,4 @@ Run tests with:
 
 ## License
 
-Private project
+MIT License - see [LICENSE](LICENSE) file for details
