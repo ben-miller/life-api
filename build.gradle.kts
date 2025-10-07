@@ -9,8 +9,9 @@ plugins {
 	id("com.google.protobuf") version "0.9.4"
 }
 
-group = "com.example"
-version = "0.0.1-SNAPSHOT"
+group = "com.example.life"
+version = "1.0.0"
+description = "Life API - Personal data aggregation and metrics tracking"
 
 java {
 	toolchain {
